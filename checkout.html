@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Brbados e Arrumados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Brbados e Arrumados</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Produtos</a>
+      <a href="cart.html">Carrinho</a>
+    </nav>
+  </header>
+
+  <main class="checkout">
+    <h2>Finalizar Compra</h2>
+    <p>Você será redirecionado para uma página segura de pagamento.</p>
+    <button class="btn" id="checkout-button">Pagar com Cartão</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Brbados e Arrumados</p>
+  </footer>
+
+  <script>
+    document.getElementById("checkout-button").addEventListener("click", () => {
+      fetch("create-checkout-session.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          carrinho: JSON.parse(localStorage.getItem("carrinho")) || []
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert("Erro ao redirecionar para o pagamento.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
