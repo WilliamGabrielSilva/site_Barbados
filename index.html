@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brbados e Arrumados</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Brbados e Arrumados</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Produtos</a>
+      <a href="cart.html">Carrinho</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h2>Estilo que Impõe Respeito</h2>
+    <p>Roupas masculinas para quem sabe o que quer.</p>
+    <a href="shop.html" class="btn">Ver Produtos</a>
+  </section>
+
+  <section class="destaques">
+    <h3>Destaques da Semana</h3>
+    <div class="produtos">
+      <!-- Produtos em destaque -->
+      <div class="produto">
+        <img src="img/camiseta1.jpg" alt="Camiseta Básica"/>
+        <h4>Camiseta Básica</h4>
+        <p>R$ 59,90</p>
+        <button onclick="adicionarAoCarrinho('Camiseta Básica', 59.90)">Adicionar</button>
+      </div>
+      <div class="produto">
+        <img src="img/calca1.jpg" alt="Calça Jeans Slim"/>
+        <h4>Calça Jeans Slim</h4>
+        <p>R$ 129,90</p>
+        <button onclick="adicionarAoCarrinho('Calça Jeans Slim', 129.90)">Adicionar</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Brbados e Arrumados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
